@@ -36,7 +36,7 @@ def howManyNewAnswers(groupsAnswers): # This finds how many identical answers a 
         #print(type(temp))
         if first_set == True:
             union = x
-            first_round = False
+            first_set = False
         else:
             union = union.intersection(x)
     #cleaned = individual_sets.intersection()
