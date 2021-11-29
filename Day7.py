@@ -7,9 +7,9 @@ from get_aoc import get_input
 rawInput = get_input(7)
 
 splitInput = rawInput.split("\n") # Splitting the data into a list
-#print("splitInput = ")
-#print(splitInput)
-#print(len(splitInput)) # Number of list groups
+print("splitInput = ")
+print(splitInput)
+print(len(splitInput)) # Number of list groups
 
 def each_bag_contains(bag_line):
     place_contain = bag_line.find("contain")
