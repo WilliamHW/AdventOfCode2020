@@ -10,9 +10,6 @@ split_input = raw_input.split("\n") # Splitting the data into a list
 #print(len(split_input)) # Number of list groups
 numbers = [int(string) for string in split_input]
 
-def sums_to_number(pair, number):
-    return sum(pair) == number
-
 length_preamble = 25 #5 for test data, 25 for real data
 counter = length_preamble
 data_set = numbers[(counter-length_preamble):(counter)]
@@ -25,7 +22,7 @@ correct = True
 
 while correct == True:
     preamble_pairs = list(combinations(data_set, 2))
-    this = next(pair for pair in preamble_pairs if sums_to_number(pair, testing_number))
+    this = next(pair for pair in preamble_pairs if sum(pair) == testing_number)
     print(this)
     counter += 1
     data_set = numbers[(counter-length_preamble):(counter)]
