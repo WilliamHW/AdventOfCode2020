@@ -1,14 +1,8 @@
 #Code to find the error number which is the first that doesn't have 2 numbers in the last 25 before it that add to it's value
-from get_aoc import get_input
+from get_aoc import get_input_integers
 from itertools import combinations
 
-raw_input = get_input(9)
-
-split_input = raw_input.split("\n") # Splitting the data into a list
-#print("split_input = ")
-#print(split_input)
-#print(len(split_input)) # Number of list groups
-numbers = [int(string) for string in split_input]
+numbers = get_input_integers(9)
 
 length_preamble = 25 #5 for test data, 25 for real data
 counter = length_preamble
