@@ -22,8 +22,10 @@ correct = True
 
 while correct == True:
     preamble_pairs = list(combinations(data_set, 2))
-    this = next(pair for pair in preamble_pairs if sum(pair) == testing_number)
+    this = next((pair for pair in preamble_pairs if sum(pair) == testing_number), None)
     print(this)
+    if this is None:
+        break
     counter += 1
     data_set = numbers[(counter-length_preamble):(counter)]
     testing_number = numbers[counter]
