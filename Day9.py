@@ -5,25 +5,14 @@ from itertools import combinations
 numbers = get_input_integers(9)
 
 length_preamble = 25 #5 for test data, 25 for real data
-counter = length_preamble
-data_set = numbers[(counter-length_preamble):(counter)]
-print(data_set)
-testing_number = numbers[counter]
-print(testing_number)
-half_that = testing_number//2
 
-correct = True
-
-while correct == True:
-    preamble_pairs = list(combinations(data_set, 2))
-    this = next((pair for pair in preamble_pairs if sum(pair) == testing_number), None)
-    print(this)
-    if this is None:
-        break
-    counter += 1
+for counter in range(length_preamble, len(numbers)):
     data_set = numbers[(counter-length_preamble):(counter)]
     testing_number = numbers[counter]
-    print(testing_number)
+    preamble_pairs = list(combinations(data_set, 2))
+    this = next((pair for pair in preamble_pairs if sum(pair) == testing_number), None)
+    if this is None:
+        break
 
 """while correct == True:
     goodnums = {testing_number-x for x in data_set if x <= half_that} & {x for x in data_set if x > half_that}
