@@ -30,3 +30,30 @@ for counter in range(length_preamble, len(numbers)):
 
 print("Part One")
 print(testing_number)
+
+for counter in range(len(numbers)):
+    running_total = numbers[counter]
+    temp_counter = counter
+    while running_total < testing_number: # t_n is value from Part 1
+        temp_counter += 1
+        running_total = running_total + numbers[temp_counter]
+        if running_total == testing_number:
+            #print("the starting counter in the data of the group is : " + str(counter))
+            #print("the ending counter in the data of the group is : " + str(temp_counter))
+            starting_place = counter
+            last_place = temp_counter
+            break
+
+values = numbers[starting_place:last_place]
+"""mini = min(values)
+maxi = max(values)
+print("The values are: ")
+print(values)
+print("With minimum : " + str(mini) + " and maximum : " + str(maxi) + " which added together equals : ")
+print(mini + maxi)"""
+
+print("Part Two")
+print(min(values) + max(values)) # 51152360
+
+
+        
